@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Interactive History Timeline - Web Học Lịch Sử Việt Nam
 
 ## Tổng quan
@@ -257,3 +258,6 @@ http://localhost:8000
 **Made for Vietnamese students**
 
 *Học lịch sử - Hiểu hiện tại - Hướng tương lai*
+=======
+# web_hoc_lich_su
+>>>>>>> 377e0b8c0ad5c3b582a6d31877fb2ccf95385081
