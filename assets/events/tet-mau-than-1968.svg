@@ -1,0 +1,93 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="130" y1="70" x2="1050" y2="760" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#402018"/>
+      <stop offset="0.55" stop-color="#171C22"/>
+      <stop offset="1" stop-color="#0F141A"/>
+    </linearGradient>
+    <radialGradient id="flare" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(840 250) rotate(128.194) scale(300 300)">
+      <stop stop-color="#F1B36A" stop-opacity="0.82"/>
+      <stop offset="0.44" stop-color="#C56E3E" stop-opacity="0.54"/>
+      <stop offset="1" stop-color="#8C3D29" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="112" y1="112" x2="500" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1D232B" stop-opacity="0.88"/>
+      <stop offset="1" stop-color="#11161C" stop-opacity="0.74"/>
+    </linearGradient>
+    <linearGradient id="smoke" x1="0" y1="800" x2="0" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E6A159" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#E6A159" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect width="1200" height="800" fill="url(#flare)"/>
+  <rect x="0" y="0" width="1200" height="800" fill="url(#smoke)"/>
+
+  <circle cx="875" cy="225" r="90" fill="#F4C978" fill-opacity="0.08"/>
+  <circle cx="930" cy="290" r="34" fill="#F4C978" fill-opacity="0.13"/>
+  <circle cx="784" cy="322" r="20" fill="#F4C978" fill-opacity="0.1"/>
+
+  <path d="M0 610C130 560 260 548 390 570C530 594 665 650 805 650C930 650 1068 606 1200 560V800H0V610Z" fill="#0D1217"/>
+  <path d="M0 648C115 606 245 598 372 622C532 652 676 715 835 715C948 715 1074 680 1200 640V800H0V648Z" fill="#10161C"/>
+
+  <g opacity="0.86">
+    <rect x="675" y="382" width="30" height="208" fill="#1D242C"/>
+    <rect x="713" y="344" width="46" height="246" fill="#1A2028"/>
+    <rect x="770" y="294" width="74" height="296" fill="#182029"/>
+    <rect x="853" y="328" width="52" height="262" fill="#1A2129"/>
+    <rect x="918" y="364" width="45" height="226" fill="#161D24"/>
+    <rect x="973" y="318" width="84" height="272" fill="#182029"/>
+    <rect x="1068" y="392" width="34" height="198" fill="#161C22"/>
+    <rect x="1111" y="344" width="24" height="246" fill="#1C242D"/>
+  </g>
+
+  <g opacity="0.72">
+    <rect x="694" y="404" width="6" height="8" fill="#D2A065"/>
+    <rect x="694" y="420" width="6" height="8" fill="#D2A065"/>
+    <rect x="694" y="436" width="6" height="8" fill="#D2A065"/>
+    <rect x="728" y="372" width="7" height="8" fill="#D2A065"/>
+    <rect x="741" y="372" width="7" height="8" fill="#D2A065"/>
+    <rect x="728" y="389" width="7" height="8" fill="#D2A065"/>
+    <rect x="741" y="389" width="7" height="8" fill="#D2A065"/>
+    <rect x="792" y="325" width="8" height="9" fill="#D2A065"/>
+    <rect x="808" y="325" width="8" height="9" fill="#D2A065"/>
+    <rect x="824" y="325" width="8" height="9" fill="#D2A065"/>
+    <rect x="792" y="344" width="8" height="9" fill="#D2A065"/>
+    <rect x="808" y="344" width="8" height="9" fill="#D2A065"/>
+    <rect x="824" y="344" width="8" height="9" fill="#D2A065"/>
+    <rect x="986" y="348" width="10" height="10" fill="#D2A065"/>
+    <rect x="1004" y="348" width="10" height="10" fill="#D2A065"/>
+    <rect x="1022" y="348" width="10" height="10" fill="#D2A065"/>
+    <rect x="986" y="368" width="10" height="10" fill="#D2A065"/>
+    <rect x="1004" y="368" width="10" height="10" fill="#D2A065"/>
+    <rect x="1022" y="368" width="10" height="10" fill="#D2A065"/>
+  </g>
+
+  <path d="M734 252L746 286L782 286L752 308L764 342L734 320L704 342L716 308L686 286L722 286L734 252Z" fill="#E8B96A"/>
+  <path d="M610 454C634 432 658 431 686 452C704 465 714 486 730 500C752 520 780 527 804 544C839 569 858 613 866 650H590C592 612 600 568 622 532C640 503 642 480 610 454Z" fill="#D06D3D" fill-opacity="0.17"/>
+  <path d="M870 410C898 388 927 389 955 409C972 421 979 442 994 455C1017 474 1054 486 1072 510C1093 538 1104 575 1108 609H820C823 569 834 529 852 498C865 474 893 447 870 410Z" fill="#D06D3D" fill-opacity="0.12"/>
+
+  <g opacity="0.92">
+    <path d="M205 566C226 548 244 536 269 537C294 538 311 550 336 570L354 800H180L205 566Z" fill="#0A0F14"/>
+    <path d="M302 560C328 532 355 520 392 523C420 525 444 538 473 564L500 800H258L302 560Z" fill="#0E1319"/>
+    <path d="M408 592C424 576 444 568 467 569C491 570 510 581 529 598L544 800H382L408 592Z" fill="#141B22"/>
+  </g>
+
+  <g opacity="0.78">
+    <path d="M234 607L219 642H249L234 607Z" fill="#C48A4D"/>
+    <path d="M338 592L322 633H354L338 592Z" fill="#C48A4D"/>
+    <path d="M435 631L420 668H450L435 631Z" fill="#C48A4D"/>
+  </g>
+
+  <rect x="96" y="96" width="482" height="260" rx="28" fill="url(#panel)" stroke="#C08D57" stroke-opacity="0.24"/>
+  <rect x="124" y="124" width="160" height="34" rx="17" fill="#8B6A43" fill-opacity="0.18" stroke="#C8A26A" stroke-opacity="0.28"/>
+  <text x="150" y="146" fill="#EAC27A" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="2.2">SU KIEN NOI BAT</text>
+  <text x="124" y="212" fill="#F3EEE6" font-family="Georgia, Times New Roman, serif" font-size="50" font-weight="700">Tet Mau Than</text>
+  <text x="124" y="268" fill="#C3CBD4" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="500">Tong tien cong nam 1968</text>
+  <text x="124" y="312" fill="#D4A261" font-family="Inter, Arial, sans-serif" font-size="82" font-weight="800">1968</text>
+
+  <rect x="885" y="88" width="184" height="88" rx="22" fill="#151B22" fill-opacity="0.86" stroke="#C08D57" stroke-opacity="0.2"/>
+  <text x="915" y="122" fill="#EAC27A" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">XUAN MAU THAN</text>
+  <text x="915" y="154" fill="#F3EEE6" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="800">30.01.1968</text>
+</svg>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Hệ thống học tập lịch sử trực quan - Khám phá lịch sử Việt Nam qua dòng thời gian tương tác">
+    <title>Lịch Sử Việt Nam | Interactive History Timeline</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=home-20260414-1">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+
+<body class="home-page">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader">
+            <div class="loader-icon">📜</div>
+            <div class="loader-text">Đang tải dòng chảy lịch sử...</div>
+            <div class="loader-bar">
+                <div class="loader-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">📜</span>
+                <span class="logo-text">Lịch Sử <span class="highlight">Việt Nam</span></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active">Trang chủ</a></li>
+                <li><a href="timeline.html" class="nav-link">Dòng thời gian</a></li>
+                <li><a href="figures.html" class="nav-link">Nhân vật</a></li>
+                <li><a href="quiz.html" class="nav-link">Kiểm tra</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-search-btn" id="openSearch" aria-label="Tìm kiếm">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="M21 21l-4.35-4.35" />
+                    </svg>
+                </button>
+                <button class="ai-chat-btn" id="openAIChat">
+                    <span class="ai-icon">🤖</span>
+                    <span>Hỏi AI</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <div class="search-input-wrap">
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="M21 21l-4.35-4.35" />
+                </svg>
+                <input type="text" class="search-input" id="searchInput" placeholder="Tìm kiếm sự kiện, nhân vật..."
+                    autofocus>
+                <button class="search-close" id="closeSearch">✕</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <canvas class="hero-particles" id="heroParticles"></canvas>
+        <div class="hero-overlay"></div>
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
+            <span class="hero-badge">📚 Lịch sử Việt Nam 1945-1975</span>
+            <h1 class="hero-title">
+                <span class="title-line">Học</span>
+                <span class="title-line highlight-gradient">Lịch Sử Việt Nam</span>
+                <span class="title-line">Qua Dòng Thời Gian</span>
+            </h1>
+            <p class="hero-subtitle" id="heroSubtitle">Từ Cách mạng Tháng Tám năm 1945 đến mùa Xuân 1975, theo dõi các giai đoạn, sự kiện và nhân vật tiêu biểu qua hệ thống học tập trực quan.</p>
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
+                <div class="stat-card">
+                    <span class="stat-number" data-stat-key="events" data-count="12">0</span>
+                    <span class="stat-label">Sự kiện lịch sử</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-stat-key="years" data-count="30">0</span>
+                    <span class="stat-label">Năm lịch sử</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-stat-key="figures" data-count="8">0</span>
+                    <span class="stat-label">Nhân vật vĩ đại</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-stat-key="battles" data-count="7">0</span>
+                    <span class="stat-label">Trận đánh lớn</span>
+                </div>
+            </div>
+            <div class="hero-actions" data-aos="fade-up" data-aos-delay="600">
+                <a href="#homeEras" class="btn btn-primary">
+                    <span>Chọn giai đoạn học</span>
+                    <svg class="btn-arrow" viewBox="0 0 24 24">
+                        <path d="M5 12h14m-7-7l7 7-7 7" />
+                    </svg>
+                </a>
+                <a href="timeline.html" class="btn btn-secondary">
+                    <span>Xem dòng thời gian</span>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Cuộn để khám phá</span>
+        </div>
+    </section>
+
+    <section id="homeEras" class="home-eras-section">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-badge">Bắt đầu học</span>
+            <h2 class="section-title">Chọn <span class="highlight-gradient">Giai Đoạn Lịch Sử</span></h2>
+            <p class="section-desc">Đi vào từng giai đoạn để xem bối cảnh, chặng phát triển và các sự kiện tiêu biểu.</p>
+        </div>
+        <div class="home-eras-grid" id="homeErasGrid"></div>
+    </section>
+
+    <section class="home-featured-section">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-badge">Sự kiện nổi bật</span>
+            <h2 class="section-title">Một Số <span class="highlight-gradient">Mốc Quan Trọng</span></h2>
+            <p class="section-desc">Những sự kiện tiêu biểu giúp người học nắm nhanh các bước ngoặt lớn trong lịch sử Việt Nam hiện đại.</p>
+        </div>
+        <div class="home-featured-grid" id="homeFeaturedGrid"></div>
+    </section>
+
+    <section class="quick-links-section">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-badge">Lối vào nhanh</span>
+            <h2 class="section-title">Đi Nhanh Đến <span class="highlight-gradient">Các Khu Vực Chính</span></h2>
+            <p class="section-desc">Truy cập nhanh đến các phần học tập và công cụ tra cứu trên website.</p>
+        </div>
+        <div class="quick-links-grid" id="quickLinksGrid"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-badge">Công cụ học tập</span>
+            <h2 class="section-title">Các Cách <span class="highlight-gradient">Tiếp Cận Nội Dung</span></h2>
+            <p class="section-desc">Kết hợp nhiều hình thức trình bày để việc học lịch sử rõ ràng, trực quan và dễ theo dõi hơn.</p>
+        </div>
+        <div class="features-grid" id="featuresGrid"></div>
+    </section>
+
+    <!-- AI Chat Modal -->
+    <div class="ai-chat-modal" id="aiChatModal">
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="chat-avatar">🤖</div>
+                <div class="chat-info">
+                    <h3>Trợ lý Lịch sử AI</h3>
+                    <span class="status">Sẵn sàng trợ giúp</span>
+                </div>
+                <button class="chat-maximize" id="maximizeAIChat" title="Phóng to">🗖</button>
+                <button class="chat-close" id="closeAIChat">✕</button>
+            </div>
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="chat-input-container">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Nhập câu hỏi về lịch sử...">
+                <button class="chat-send" id="sendMessage">📤</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <span>📜</span> Lịch Sử Việt Nam
+                </div>
+                <p class="footer-about">
+                    Hệ thống học tập lịch sử trực quan, biến những trang sách khô khan thành hành trình trải nghiệm thú
+                    vị cho học sinh, sinh viên Việt Nam.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Liên kết nhanh</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="timeline.html">Dòng thời gian</a></li>
+                    <li><a href="figures.html">Nhân vật lịch sử</a></li>
+                    <li><a href="quiz.html">Kiểm tra kiến thức</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Thời kỳ lịch sử</h4>
+                <ul class="footer-links">
+                    <li><a href="era.html?era=chong-phap">Kháng chiến chống Pháp</a></li>
+                    <li><a href="era.html?era=chong-my">Kháng chiến chống Mỹ</a></li>
+                    <li><a href="era.html?era=thong-nhat">Thống nhất đất nước</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-tagline">Học lịch sử — Hiểu hiện tại — Hướng tương lai</p>
+            <p class="footer-copyright">© 2026 Interactive History Timeline — Made with ❤️ for Vietnamese students</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Về đầu trang">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+            <path d="M12 19V5m-7 7l7-7 7 7" />
+        </svg>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/data.js?v=supabase-20260414-6"></script>
+    <script src="js/supabase-config.js?v=supabase-20260331-1"></script>
+    <script src="js/data-service.js?v=supabase-20260331-1"></script>
+    <script src="js/gemini-config.js?v=gemini-20260429-1"></script>
+    <script src="js/ai-service.js?v=gemini-20260429-1"></script>
+    <script src="js/shared.js?v=gemini-20260429-1"></script>
+    <script src="js/home.js?v=home-20260414-1"></script>
+</body>
+
+</html>

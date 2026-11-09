@@ -1,0 +1,17 @@
+# Private API configuration
+/ai_memory
+# Gemini API key
+/js/gemini-config.js
+
+# Temporary files
+/tmp_stage_docs/
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# Environment variables
+.env
+.env.*
+!.env.example
